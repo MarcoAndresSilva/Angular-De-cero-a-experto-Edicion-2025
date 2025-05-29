@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { Component, signal  } from '@angular/core';
 @Component({
     
     templateUrl: './counter-page.component.html',
@@ -6,13 +7,16 @@ import { Component } from '@angular/core';
 })
 
 export class CounterPageComponent {
-    public counter: number = 10;
+    counter: number = 10;
+    counterSignal = signal(0)
 
     increaseBy(value: number): void {
         this.counter += value;
+        this.counterSignal.update(currency => currency + value);
     }
 
     resetCounter(): void {
-        this.counter = 10;
+        this.counter = 0;
+        this.counterSignal.set(0);
     }
 }

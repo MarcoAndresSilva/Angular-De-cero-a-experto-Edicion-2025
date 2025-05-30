@@ -10,6 +10,15 @@ export class CounterPageComponent {
     counter: number = 10;
     counterSignal = signal(0)
 
+    constructor() { 
+        setInterval(() => {  // para efecto de prueba del onPush
+            // this.counter += 1;
+            this.counterSignal.update((v) => v + 1);
+            console.log('counterSignal', this.counterSignal());
+            
+        },2000);
+    }
+
     increaseBy(value: number): void {
         this.counter += value;
         // this.counterSignal.set(this.counterSignal() + value); tambien vlaido pero no tan optimizado

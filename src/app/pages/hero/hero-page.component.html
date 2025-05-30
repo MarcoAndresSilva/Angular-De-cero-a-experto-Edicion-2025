@@ -1,0 +1,31 @@
+
+<div class="title">
+    <h1>Tarea Señales en Angular</h1>
+</div>
+
+<table class="table table-bordered w-50 mx-auto">
+  <tbody>
+    <tr>
+      <th>Nombre</th>
+      <td>{{ name() }}</td>
+    </tr>
+    <tr>
+      <th>Edad</th>
+      <td>{{ age() }}</td>
+    </tr>
+    <tr>
+      <th>Método</th>
+      <td>{{ getHeroDescription() }}</td>
+    </tr>
+    <tr>
+      <th>Capitalizado</th>
+      <td>{{ capitalizedName() }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <button (click)="changeHero()" class="btn btn-primary mx-2">Cambiar Heroe</button>
+  <button (click)="changeAge()" class="btn btn-primary mx-2">Cambiar Edad</button>
+  <button (click)="resetForm()" class="btn btn-secondary mx-2">Reset</button>
+</div>

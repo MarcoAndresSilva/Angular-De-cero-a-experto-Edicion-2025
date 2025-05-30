@@ -1,9 +1,10 @@
-import { CurrencyPipe } from '@angular/common';
-import { Component, signal  } from '@angular/core';
+// import { CurrencyPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, signal  } from '@angular/core';
 @Component({
     
     templateUrl: './counter-page.component.html',
-    styleUrls: ['./counter-page.component.css']
+    styleUrls: ['./counter-page.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CounterPageComponent {
@@ -12,6 +13,7 @@ export class CounterPageComponent {
 
     increaseBy(value: number): void {
         this.counter += value;
+        // this.counterSignal.set(this.counterSignal() + value); tambien vlaido pero no tan optimizado
         this.counterSignal.update(currency => currency + value);
     }
 

@@ -1,21 +1,19 @@
-import { ChangeDetectionStrategy, Component, signal  } from '@angular/core';
+import { Component, signal , computed  } from '@angular/core';
 @Component({
     
     templateUrl: './hero-page.component.html',
-    styleUrls: ['./hero-page.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrls: ['./hero-page.component.css']
 })
 
 export class HeroPageComponent {
     name = signal('Ironman');
     age = signal(45);
 
+    heroDescription = computed(() => `${ this.name() } - ${ this.age() }`);
+
+    capitalizedName = computed(() => this.name().toUpperCase());
+
     constructor() { 
-    }
-
-    getHeroDescription(): string {
-        return `${ this.name() } - ${ this.age() }`;
-
     }
 
     changeHero(): void {
@@ -25,10 +23,6 @@ export class HeroPageComponent {
 
     changeAge(): void {
         this.age.set(60);
-    }
-
-    capitalizedName(): string {
-        return this.name().toUpperCase();
     }
     
     resetForm(): void {

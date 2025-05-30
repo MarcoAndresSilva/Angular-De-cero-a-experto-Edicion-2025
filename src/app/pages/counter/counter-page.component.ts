@@ -1,4 +1,3 @@
-// import { CurrencyPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal  } from '@angular/core';
 @Component({
     

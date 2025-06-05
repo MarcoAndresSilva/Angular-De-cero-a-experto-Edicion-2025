@@ -11,20 +11,36 @@
     </div>
 
     <div class="col-12 col-sm-6">
-        <h3>Listado</h3>
+        <h3>Listado de Personajes Fuertes</h3>
         <ul>
             @for (character of characters(); track character.id; let idx = $index) {
-                <li> 
-                    <span>{{idx+1}} - {{ character.name }}</span> 
-                    
-                    <strong
-                        [class.text-danger]= "character.power > 9000" 
-                        [class.text-primary]= "character.power < 9000"
-                        >
-                        <!-- [ngClass]="powerClasses()"> -->
-                        {{ character.power }}
-                    </strong>
-                </li>
+                @if(character.power > 7000){
+                    <li> 
+                        <span>{{idx+1}} - {{ character.name }}</span> 
+                        <strong
+                            [class.text-danger]= "character.power > 9000" 
+                            [class.text-primary]= "character.power < 9000"
+                            >
+                            <!-- [ngClass]="powerClasses()"> -->
+                            {{ character.power }}
+                        </strong>
+                    </li>
+                }@else {
+                    <li><strong>Aqui no hay nadie fuerte</strong></li>
+                }
+            }
+        </ul>
+        <h3>Listado de Personajes Débiles</h3>
+        <ul>
+            @for (character of characters(); track character.id; let idx = $index) {
+                @if(character.power < 7000){
+                    <li> 
+                        <span>{{idx+1}} - {{ character.name }}</span> 
+                        <strong [class.text-warning]= "character.power < 7000" >
+                            {{ character.power }}
+                        </strong>
+                    </li>
+                }
             }
         </ul>
     </div>

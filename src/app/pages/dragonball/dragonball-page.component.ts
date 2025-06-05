@@ -21,6 +21,8 @@ export class DragonballPageComponent {
     { id: 2, name: 'Vegeta', power: 9500 },
     { id: 3, name: 'Gohan', power: 7500 },
     { id: 4, name: 'Piccolo', power: 7000 },
+    { id: 5, name: 'Krillin', power: 5000 },
+    { id: 6, name: 'Yamcha', power: 4000 },
   ]);
 
   // powerClasses = computed(() => {

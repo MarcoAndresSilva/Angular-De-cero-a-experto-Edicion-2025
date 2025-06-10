@@ -3,7 +3,10 @@
         "Cambiar",
         "Capitalizado",
         "Descripción",
+        "dragonball",
         "Edad",
+        "Gohan",
+        "Goku",
         "hacerlo",
         "Heroe",
         "Ironman",
@@ -11,6 +14,13 @@
         "otra",
         "Señales",
         "Spiderman",
-        "Tarea"
-    ]
+        "Tarea",
+        "Vegeta"
+    ],
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true,
+            "skipStyle": true
+        }
+    }
 }

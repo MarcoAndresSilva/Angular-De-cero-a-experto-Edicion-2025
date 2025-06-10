@@ -1,0 +1,81 @@
+:host {
+  display: block;
+  padding: 2rem;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+hr {
+  border: none;
+  border-top: 3px solid #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+section.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.col-12 {
+  width: 100%;
+}
+.col-sm-6 {
+  width: 100%;
+  max-width: 48%;
+}
+
+@media screen and (max-width: 768px) {
+  .col-sm-6 {
+    max-width: 100%;
+  }
+}
+
+input.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  transition: border-color 0.3s;
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+}
+
+button.btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &.btn-primary {
+    background-color: #3b82f6;
+    color: #fff;
+
+    &:hover {
+      background-color: #2563eb;
+    }
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #334155;
+}

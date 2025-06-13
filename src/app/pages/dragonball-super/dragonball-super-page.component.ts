@@ -1,5 +1,6 @@
 import { Component , signal} from '@angular/core';
 import { CharacterListComponent } from '../../components/dragonball/character-list/character-list.component';
+import { CharacterAddComponent } from "../../components/dragonball/character-add/character-add.component";
 
 interface Character {
   id: number;
@@ -11,8 +12,9 @@ interface Character {
 
   templateUrl: './dragonball-super-page.component.html',
   styleUrls: ['./dragonball-super.component.scss'],
-  imports: [CharacterListComponent]
+  imports: [CharacterListComponent, CharacterAddComponent]
 })
+
 export class DragonballSuperPageComponent {
 
   name = signal('');
@@ -24,7 +26,6 @@ export class DragonballSuperPageComponent {
     { id: 3, name: 'Gohan', power: 7500 },   
   ]);
 
-
   addCharacter(): void {
     if(!this.name() || !this.power() || this.power() <= 0) return;
 
@@ -34,7 +35,8 @@ export class DragonballSuperPageComponent {
       power: this.power(),
     };
 
-    this.characters.update((list) => [...list, newCharacter]);
+    // this.characters.update((list) => [...list, newCharacter]);
+    console.log({newCharacter});
     this.resetFields();
   }
 
@@ -42,5 +44,4 @@ export class DragonballSuperPageComponent {
     this.name.set('');
     this.power.set(0);
   }
-
 }

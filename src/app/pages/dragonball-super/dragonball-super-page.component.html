@@ -3,29 +3,12 @@
 
 <section class="row ">
     <div class="col-12 col-sm-6">
-        <h3>Agregar al personaje: {{ name() }}</h3>
-        <input 
-        type="text" 
-        class="form-control" 
-        placeholder="Nombre"
-        [value]="name()"
-        (change)="name.set(txtName.value)"
-        (input)="name.set(txtName.value)"
-        #txtName
-        >
-
-        <input 
-        type="text" 
-        class="form-control mt-2" 
-        placeholder="Poder"
-        [value]="power()"
-        (input)="power.set(+txtPower.value || 0)"
-        #txtPower
-        >
-
-        <button (click)="addCharacter()" class="mt-2 btn btn-primary">Agregar</button>
+        <dragonball-character-add/> 
     </div>
-
-    <dragonball-character-list [characters]="characters()"/>
-
+    <div class="col-12 col-sm-6">
+        <dragonball-character-list 
+        listName="Personajes Fuertes de Dragon Ball Super"
+        [characters]="characters()"/>
+    </div>
+    
 </section>

@@ -26,19 +26,10 @@ export class DragonballSuperPageComponent {
     { id: 3, name: 'Gohan', power: 7500 },   
   ]);
 
-  addCharacter(): void {
-    if(!this.name() || !this.power() || this.power() <= 0) return;
-
-    const newCharacter: Character = {
-      id: this.characters().length + 1,
-      name: this.name(),
-      power: this.power(),
-    };
-
-    // this.characters.update((list) => [...list, newCharacter]);
-    console.log({newCharacter});
-    this.resetFields();
+  addCharacter(character: Character): void {  
+    this.characters.update((list) => [...list, character])
   }
+
 
   resetFields(): void {
     this.name.set('');
